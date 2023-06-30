@@ -43,8 +43,15 @@ function Main(props) {
                 </section>
             )}
             <section className="cards" aria-label="Секция с фотографиями">
-                {cards.map((card, id) => (
-                    <Card key={id} card={card} link={card.link} name={card.name} likes={card.likes.length} onCardClick={props.onCardClick} />
+                {cards.map((card) => (
+                    <Card 
+                    key={card.id} 
+                    card={card} 
+                    link={card.link} 
+                    name={card.name} 
+                    likes={card.likes.length} 
+                    onCardClick={props.onCardClick} 
+                    />
                 ))}
             </section>
         </main>

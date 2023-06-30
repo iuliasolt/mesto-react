@@ -34,7 +34,12 @@ function App() {
         <div className="page">
             <div className="page__content">
                 <Header />
-                <Main onEditAvatar={handleEditAvatarClick} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onCardClick={handleCardClick} />
+                <Main 
+                  onEditAvatar={handleEditAvatarClick} 
+                  onEditProfile={handleEditProfileClick} 
+                  onAddPlace={handleAddPlaceClick} 
+                  onCardClick={handleCardClick} 
+                 />
                 <Footer />
                 <PopupWithForm
                     isOpen={isEditProfilePopupOpen}
@@ -43,15 +48,13 @@ function App() {
                     title={"Редактировать профиль"}
                     form={"profileEdit"}
                     buttonText={"Сохранить"}
-                    children={
-                        <>
+                    >
                             <input id="username" type="text" name="name" className="popup__text popup__text_type_name" placeholder="Имя" minLength="2" maxLength="40" required />
                             <span id="error-username" className="popup__error-message"></span>
                             <input id="job" type="text" name="about" className="popup__text  popup__text_type_job" placeholder="О себе" minLength="2" maxLength="200" required />
                             <span id="error-job" className="popup__error-message"></span>
-                        </>
-                    }
-                />
+                        
+                  </PopupWithForm>
 
                 <PopupWithForm
                     isOpen={isAddPlacePopupOpen}
@@ -60,15 +63,12 @@ function App() {
                     title={"Новое место"}
                     form={"profileAdd"}
                     buttonText={"Создать"}
-                    children={
-                        <>
+                    >
                             <input id="title" type="text" name="name" className="popup__text  popup__text_type_title" placeholder="Название" minLength="2" maxLength="30" required />
                             <span id="error-title" className="popup__error-message"></span>
                             <input id="link" type="url" name="link" className="popup__text  popup__text_type_link" placeholder="Ссылка на картинку" required />
-                            <span id="error-link" className="popup__error-message"></span>
-                        </>
-                    }
-                />
+                            <span id="error-link" className="popup__error-message"></span> 
+                </PopupWithForm>
 
                 <PopupWithForm
                     isOpen={isEditAvatarPopupOpen}
@@ -77,13 +77,10 @@ function App() {
                     title={"Обновить аватар"}
                     form={"profileAvatar"}
                     buttonText={"Сохранить"}
-                    children={
-                        <>
+                    >
                             <input id="linkAvatar" type="url" name="avatar" className="popup__text  popup__text_type_link" placeholder="Ссылка на картинку" required />
                             <span id="error-linkAvatar" className="popup__error-message"></span>
-                        </>
-                    }
-                />
+                </PopupWithForm>
 
                 <ImagePopup 
                   card={selectedCard} 

@@ -1,5 +1,5 @@
 # Проект: Место
-
+GitHub Pages: http://iuliasolt.github.io/mesto-react
 ### Обзор
 * Описание
 * Использованные технологии

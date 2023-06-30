@@ -4,6 +4,7 @@ function Card(props) {
     function handleCardClick()  {
         props.onCardClick(props.card); 
       }
+      
       return(
         
         <article className="card">
