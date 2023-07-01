@@ -5,6 +5,7 @@ import Card from "./Card.js";
 import { Spinner } from "./Spinner";
 
 function Main(props) {
+   
     const [cards, setCards] = React.useState([]);
     const [userInfo, setUserInfo] = React.useState({});
     const [isLoading, setIsLoading] = React.useState(false);
@@ -22,11 +23,13 @@ function Main(props) {
             })
             .finally(() => setIsLoading(false));
     }, []);
+   
 
   
 
     return (
         <main className="content">
+            
             {isLoading ? (
                 <Spinner />
             ) : (
@@ -42,19 +45,27 @@ function Main(props) {
                     <button type="button" className="profile__add-button" aria-label="Кнопка: Добавить" onClick={props.onAddPlace}></button>
                 </section>
             )}
+            
             <section className="cards" aria-label="Секция с фотографиями">
-                {cards.map((card) => (
+                
+                {cards.map((card, _id) => (
                     <Card 
-                    key={card.id} 
+                    key={card._id} 
                     card={card} 
                     link={card.link} 
                     name={card.name} 
                     likes={card.likes.length} 
                     onCardClick={props.onCardClick} 
-                    />
+                    
+                    /> 
+                    
                 ))}
+                
+                
             </section>
+            
         </main>
+       
     );
 }
 

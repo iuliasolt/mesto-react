@@ -1,10 +1,11 @@
 import React from "react";
 
 function Card(props) {
+   console.log(props.card)
     function handleCardClick()  {
         props.onCardClick(props.card); 
       }
-      
+
       return(
         
         <article className="card">
