@@ -1,4 +1,4 @@
- class Api {
+export default class Api {
   constructor(options) {
       this._baseUrl = options.baseUrl;
       this._headers = options.headers;
@@ -69,11 +69,11 @@
   }
 
   setLike(cardId) {
-      return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-          method: /*liked ? 'DELETE' :*/ "PUT",
-          headers: this._headers,
-      }).then(this._handleResponse);
-  }
+    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+        method: /*liked ? 'DELETE' :*/ "PUT",
+        headers: this._headers,
+    }).then(this._handleResponse);
+}
 
   /*Удаление лайков*/
   deleteLike(cardId) {
