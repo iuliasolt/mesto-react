@@ -7,8 +7,8 @@
   transform: translate(-50%, -50%);
   margin: 0 auto;
   padding: 0;*/
-  position: relative;
   width: max-content;
   max-width: 75vw;
   max-height: 75vh;
+  position: relative;
 }
